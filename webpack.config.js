@@ -13,6 +13,19 @@ module.exports = {
     clean: true,
     assetModuleFilename: '[name][ext]',
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    open: true,
+    historyApiFallback: true,
+    hot: true,
+    port: 'auto',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
+    modules: ['src', 'node_modules']
+  },
   devtool: 'source-map',
   module: {
     rules: [
