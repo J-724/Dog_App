@@ -15,16 +15,13 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.resolve(__dirname, 'dist'),
     },
+    port: 3000,
     open: true,
-    historyApiFallback: true,
     hot: true,
-    port: 'auto',
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
-    modules: ['src', 'node_modules']
+    compress: true,
+    historyApiFallback: true,
   },
   devtool: 'source-map',
   module: {
@@ -66,14 +63,6 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-        use: {
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]',
-                outputPath: 'assets',
-                publicPath: 'assets',
-            }
-        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,

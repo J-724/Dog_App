@@ -1,7 +1,6 @@
 {
     "env": {
         "browser": true,
-        "react": true,
         "es2021": true
     },
     "extends": [
@@ -18,6 +17,5 @@
         "react"
     ],
     "rules": {
-        "indent": ["error", 2]
     }
 }
